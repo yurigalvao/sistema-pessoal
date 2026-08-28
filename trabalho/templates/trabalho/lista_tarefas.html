@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Minhas Tarefas</title>
+</head>
+<body>
+    <h1>Minhas Tarefas</h1>
+    
+    <ul>
+        {% for tarefa in tarefas %}
+            <li>{{ tarefa.titulo }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
