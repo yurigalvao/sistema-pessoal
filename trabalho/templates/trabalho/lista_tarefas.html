@@ -1,15 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="{% static 'trabalho/style.css' %}">
 </head>
 <body>
     <h1>Minhas Tarefas</h1>
     
-    <ul>
+    <div class="tarefas-container">
         {% for tarefa in tarefas %}
-            <li>{{ tarefa.titulo }}</li>
+            <div class="tarefa-card">
+                <h3>{{ tarefa.titulo }}</h3>
+                <span class="badge">{{ tarefa.get_status_display }}</span>
+                <p>Projeto: {{ tarefa.projeto }}</p>
+                <p>Prioridade: {{ tarefa.get_prioridade_display }}</p>
+                <p>Vence em: {{ tarefa.data_vencimento }}</p>
+            </div>
         {% endfor %}
-    </ul>
+        </div>
 </body>
 </html>
